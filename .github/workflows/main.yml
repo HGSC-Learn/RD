@@ -36,9 +36,9 @@ jobs:
 
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "12345678Xx" -Force)
 
-    - name: Install Visual Studio Code
+    # - name: Install Visual Studio Code
 
-      run: Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?LinkID=852157 -OutFile VSCodeSetup.exe; Start-Process .\VSCodeSetup.exe -ArgumentList '/VERYSILENT /NORESTART' -Wait
+    #   run: Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?LinkID=852157 -OutFile VSCodeSetup.exe; Start-Process .\VSCodeSetup.exe -ArgumentList '/VERYSILENT /NORESTART' -Wait
 
     - name: Clone Repository
 
