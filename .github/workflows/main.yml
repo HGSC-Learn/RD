@@ -11,16 +11,16 @@ jobs:
     steps:
 
     - name: Download
+      run: choco install ngrok
+    #   run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
 
-      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+    # - name: Extract
 
-    - name: Extract
-
-      run: Expand-Archive ngrok.zip
+    #   run: Expand-Archive ngrok.zip
 
     - name: Auth
-
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: ngrok config add-authtoken 28nIDnTp5o6Rr1eZ4LvbL7dkQG4_3DVDXmkSr8DsdYQVpN6Wn
+      # run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
 
       env:
 
@@ -45,5 +45,8 @@ jobs:
       run: git clone https://github.com/ai-to-ai/Auto-Gmail-Creator $env:USERPROFILE\Desktop\Auto-Gmail-Creator
 
     - name: Create Tunnel
+    
+      run: ngrok tcp 3389
+    # - name: Create Tunnel
 
-      run: .\ngrok\ngrok.exe tcp 3389
+    #   run: .\ngrok\ngrok.exe tcp 3389
