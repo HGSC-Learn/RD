@@ -40,9 +40,9 @@ jobs:
 
     #   run: Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?LinkID=852157 -OutFile VSCodeSetup.exe; Start-Process .\VSCodeSetup.exe -ArgumentList '/VERYSILENT /NORESTART' -Wait
 
-    - name: Clone Repository
+    # - name: Clone Repository
 
-      run: git clone https://github.com/ai-to-ai/Auto-Gmail-Creator $env:USERPROFILE\Desktop\Auto-Gmail-Creator
+    #   run: git clone https://github.com/ai-to-ai/Auto-Gmail-Creator $env:USERPROFILE\Desktop\Auto-Gmail-Creator
 
     - name: Create Tunnel
     
